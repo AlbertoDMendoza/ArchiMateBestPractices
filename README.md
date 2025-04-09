@@ -35,8 +35,8 @@ in the second line put the element name in the third line put the element type i
 - Avoid qualifiers – e.g. `Reporting (Finance)`
 - Use Title Case for Element names (e.g., `Auxiliary Services`)
 - Use Title Case or PascalCase for Properties (e.g., `Course Registration`, `StudentInformationSystem`) 
-- For Views, use conventions that can support hierarchies of information; this supports navigation and reporting.
-  - standardized prefixes for state (e.g., `ASIS_`, `TOBE_`)
+- For Views, use conventions that can support hierarchies of information; this helps with navigation and reporting.
+  - Use standardized prefixes for state (e.g., `ASIS_`, `TOBE_`, or `Current`,`Target`,`Project`)
   - Use Viewpoints abbreviation (if any) for suffixes (e.g. `_CAP` for Capability Map)
 - Name Relationships explicitly only when semantically useful
 - When creating custom Specializations, maintain a list of custom types in your model documentation for governance
@@ -74,11 +74,13 @@ Some Notable inclusions:
 
 ## 🧠 Modeling Current and Future State
 
+it is hard to use the same model for AS-IS and TO-BE architectures.  One represents Facts, such as Current State, Application Inventory, Process Maps, Technology Catalogs, etc. The other is to support or record decisions, such as principles, standards, or future-state architectures.
 **Clearly distinguish between "as-is" and "to-be" architectures.**
 
 - Use separate folders or views with prefixes (`ASIS_`, `TOBE_`)
 - Tag elements using properties like `state=current` or `state=future`
-- Consider visual differentiation (color, label) to indicate state
+- Consider visual differentiation (color, label) to indicate state.
+- 
 
 ---
 
@@ -100,9 +102,10 @@ Some Notable inclusions:
 
 **Version control and collaboration for teams.**
 
-- Use Git-based repositories (GitHub, GitLab, Azure DevOps)
+- Use Git-based repositories (GitHub, BitBucket, GitLab, Azure DevOps)
 - Commit often and write meaningful messages
 - Consider branch-per-feature or branch-per-domain strategies
+- Change History tab: if you look at the message lines, one or two of them have a small icon to materialize HEADs of remote (yellow cylinder) and local (white sheet of paper
 
 📘 Resources:
 - [coArchi Guide](https://www.archimatetool.com/plugins/coarchi/)
