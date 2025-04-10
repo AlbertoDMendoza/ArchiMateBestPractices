@@ -1,4 +1,4 @@
-# ArchiMate Toolkit Best Practices & Resource Guide
+# ArchiMate Archi Tool Best Practices & Resource Guide
 
 This guide provides formal resources, best practices by industry experts, recommended workflows, and other key resources for using ArchiMate and the Archi toolkit effectively in individual and collaborative settings.
 ---
