@@ -69,19 +69,32 @@ Some Notable inclusions:
 - [SVG-based View2SingleHTML by Remco Schellekens](https://github.com/RemcoSchellekensNS/jarchi-View2SingleHTML/tree/main) - [Forum Post](https://forum.archimatetool.com/index.php?topic=1500.msg7726#msg7726)
 - [Isolate View Into Separate Model by Remco Schellekens](https://gist.github.com/RemcoSchellekensNS/a528ba45bf1541920075c1504af975f4)
 - [ArcHistory, display history of views in published websites by jsimoncello](https://forum.archimatetool.com/index.php?topic=1416.msg7388#msg7388)
+- [Generate Markdown documentation by Richard Heward](https://gist.github.com/rich-biker/9a3c86c5a576ce0d8639856f3ee81651)
+- [Audit Model based on MetaModel by Steven Mileham](https://gist.github.com/smileham/ea92a4133c81f51474596ce8428935f8)
 
 ---
 
 ## 🧠 Modeling Current and Future State
 
-it is hard to use the same model for AS-IS and TO-BE architectures.  One represents Facts, such as Current State, Application Inventory, Process Maps, Technology Catalogs, etc. The other is to support or record decisions, such as principles, standards, or future-state architectures.
-**Clearly distinguish between "as-is" and "to-be" architectures.**
+It is hard to use the same model for AS-IS and TO-BE architectures.  One represents Facts, such as Current State, Application Inventory, Process Maps, Technology Catalogs, etc. The other is to support or record decisions, such as future-state architectures and therefore subject to constant change.  Object names, definitions, relations and views will evolve from AS-IS across the different iterations of TO-BE.
 
-- Use separate folders or views with prefixes (`ASIS_`, `TOBE_`)
-- Tag elements using properties like `state=current` or `state=future`
-- Consider visual differentiation (color, label) to indicate state.
-- 
+JB Sarrodie suggests two different approaches on the [Forum](https://forum.archimatetool.com/index.php?topic=1153.msg6154#msg6154)
+```
+In my case, I assume that name and definition won't change, only relationships and views will.
+Another assumption is that people mainly interact with views, and view provide some context (the view title but also the way they are organized inside a folder hierarchy).
+My last assumption is that, at some point some automation is needed which relies on the knowledge that some concept will appear in the future).
+With those assumptions in mind, my approach relies on a well defined (but flexible) folder hierarchy for views which make it possible to distinguish views describing the current state or the future state (or even some state in-between). It then becomes easy to know the context in which a view sits.
+(...)
+```
 
+```
+Another option that I've seen (but have limited experience with) is to start with the AS-IS model, save it as another (TO-BE) model and do whatever you want in this TO-BE model. Then, if you want to reflect changes from AS-IS to TO-BE, you simply have to use the model import feature of Archi to import AS-IS into TO-BE. When you're done with TO-BE, make sure it contains only new or changed views, remove every concept that doesn't appear in at least one view and import TO-BE into AS-IS. Of course, this is very limited and doesn't permit in depth analysis of changes.
+```
+
+---
+---
+Anything after this needs more details
+---
 ---
 
 ## 🗂 Managing Models
@@ -90,6 +103,7 @@ it is hard to use the same model for AS-IS and TO-BE architectures.  One represe
 
 - **Single Model**: Easier to manage, better traceability across layers
 - **Multiple Models**: Suitable for complex orgs or distributed teams, but requires governance
+- **Federated Model**: Centralized AS-IS Model, distributed copies per Area / Project teams.  (???)
 
 ### Collaboration Strategies
 
@@ -108,15 +122,27 @@ it is hard to use the same model for AS-IS and TO-BE architectures.  One represe
 - Change History tab: if you look at the message lines, one or two of them have a small icon to materialize HEADs of remote (yellow cylinder) and local (white sheet of paper
 
 📘 Resources:
-- [coArchi Guide](https://www.archimatetool.com/plugins/coarchi/)
+- [coArchi Download](https://www.archimatetool.com/plugins/#coArchi)
 
 ---
 
-## 🧱 Model Structure and Patterns
+### 🔗 Database Plugin
 
+**Database export/import plugin that store models in a central repository.**
+
+- Export and import models to a relational database (PostGreSQL, MySQL, MS SQL Server, Oracle or SQLite)
+- Export elements and relationships to a graph database (Neo4J)
+
+[Archimate Tool Database-Plugin](https://github.com/archi-contribs/database-plugin)
+
+---
+
+## 🧱 ArchiMate Patterns
 
 📚 Resources:
-- [Eero Hosiaisluoma – ArchiMate Cookbook](https://www.hosiaisluoma.fi/blog/archimate/)
+- [ArchiMate Community - Patterns Library](https://archimate-community.org/#!patterns.md)
+- [Mastering ArchiMate by Gerben Wierda](https://masteringarchimate.com/)
+- [ArchiMate Cookbook by Eero Hosiaisluoma](https://www.hosiaisluoma.fi/blog/archimate/)
 
 ---
 
@@ -127,7 +153,7 @@ it is hard to use the same model for AS-IS and TO-BE architectures.  One represe
 - Generate interactive websites with tools like [Archi HTML Report] to publish to a central intranet.
 - SharePoint does not allow scripting by default. See .ASPX workaround: (https://forum.archimatetool.com/index.php?topic=1429.msg7450#msg7450)
 - Generate Single-Page HTML file with [Single-page HTML Export by Phillip Beauvoir & Jean-Baptiste Sarrodie](https://github.com/archi-contribs/jarchi-single-page-html-export)
-- Generate Single-Page HTML View but with SVG with [View2SingleHTML by Remco Schellekens](https://github.com/RemcoSchellekensNS/jarchi-View2SingleHTML/tree/main)
+- Generate Single-Page HTML from View (with SVG) with [View2SingleHTML by Remco Schellekens](https://github.com/RemcoSchellekensNS/jarchi-View2SingleHTML/tree/main)
 
 ---
 
@@ -138,7 +164,9 @@ it is hard to use the same model for AS-IS and TO-BE architectures.  One represe
 - Add properties like `owner`, `domain`, `status`, `lastUpdated`
 - Use scripts to batch assign or update
 - Useful for filtering and custom exports
+- Keeping metadata updated...
 
+  
 ---
 
 ## 🧭 Model Navigation
@@ -162,7 +190,7 @@ it is hard to use the same model for AS-IS and TO-BE architectures.  One represe
 
 ## 🧰 View Metadata & Updates
 
-**Keep model documentation relevant and accurate.**
+**Keeping model documentation relevant and accurate.**
 
 - Create a `viewMeta` property with author/date/info
 - Use a script to audit last modified dates
@@ -175,7 +203,7 @@ it is hard to use the same model for AS-IS and TO-BE architectures.  One represe
 **Enrich your model with data from other systems.**
 
 - Import CSVs (e.g., from CMDB, HR, or ERP systems)
-- Use jArchi to pull/push data to REST APIs
+- Use jArchi to pull/push data
 - Sync architecture data with PowerBI, GraphDB, or ServiceNow
 
 ---
