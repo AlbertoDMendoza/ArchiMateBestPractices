@@ -56,11 +56,10 @@ Collection of curated scripts. To share script on GitHub Gist, script must ends 
 
 🛠 Collection Scripts:
 - [Archi GitHub - jArchi Examples](https://github.com/archimatetool/archi-scripting-plugin/tree/master/com.archimatetool.script.premium/examples)
-- [ArchiMateTool - Community Shared Scripts](https://github.com/archimatetool/archi-scripting-plugin/wiki/Community-shared-scripts)
-  - [rchevalier - Scripting Community](https://github.com/rchevallier/jarchi-lib)
+- [jArchi Sample Scripts (part of jArchi codebase)](https://github.com/archimatetool/archi-scripting-plugin/wiki/Community-shared-scripts)
 - [jArchi Community Script Pack](https://github.com/archi-contribs/jarchi-community-script-pack)
 - [jarchi-lib - Collection of jArchi scripts curated and developed by Robert Chevallier.](https://github.com/rchevallier/jarchi-lib)
-- [JArchi Scripts Collection - Collection of jArchi scripts and resources curated and developed by Thomas Rohde.](https://github.com/ThomasRohde/archi-scripts)
+- [jArchi Scripts - Collection of jArchi scripts and resources curated and developed by Thomas Rohde.](https://github.com/ThomasRohde/archi-scripts)
 - [GitHub Gist - simple way to share (and thus find) jArchi script.](https://gist.github.com/search?utf8=%E2%9C%93&q=%23jarchi+extension%3Aajs&ref=searchresults)
 
 Some Notable inclusions:
@@ -78,7 +77,7 @@ Some Notable inclusions:
 
 It is hard to use the same model for AS-IS and TO-BE architectures.  One represents Facts, such as Current State, Application Inventory, Process Maps, Technology Catalogs, etc. The other is to support or record decisions, such as future-state architectures and therefore subject to constant change.  Object names, definitions, relations and views will evolve from AS-IS across the different iterations of TO-BE.
 
-JB Sarrodie suggests two different approaches on the [Forum](https://forum.archimatetool.com/index.php?topic=1153.msg6154#msg6154)
+In the [ArchiMateTool Forum](https://forum.archimatetool.com/index.php?topic=1153.msg6154#msg6154), JB Sarrodie suggests two different approaches:
 ```
 In my case, I assume that name and definition won't change, only relationships and views will.
 Another assumption is that people mainly interact with views, and view provide some context (the view title but also the way they are organized inside a folder hierarchy).
@@ -143,6 +142,7 @@ Anything after this needs more details
 - [ArchiMate Community - Patterns Library](https://archimate-community.org/#!patterns.md)
 - [Mastering ArchiMate by Gerben Wierda](https://masteringarchimate.com/)
 - [ArchiMate Cookbook by Eero Hosiaisluoma](https://www.hosiaisluoma.fi/blog/archimate/)
+- [Archimate Patterns by Steven Mileham](https://smileham.co.uk/2019/03/20/archimate-patterns-all-together-now/)
 
 ---
 
